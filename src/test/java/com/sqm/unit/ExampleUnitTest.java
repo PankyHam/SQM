@@ -1,6 +1,6 @@
 package com.sqm.unit;
 
-import com.sqm.PingVerticle;
+import com.sqm.Server;
 import org.junit.Test;
 
 /*
@@ -24,7 +24,7 @@ public class ExampleUnitTest {
 
   @Test
   public void testVerticle() {
-    PingVerticle vert = new PingVerticle();
+    Server vert = new Server();
 
     // do something with verticle
   }
