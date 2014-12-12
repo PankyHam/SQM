@@ -36,7 +36,7 @@ public class Server extends Verticle {
 			@Override
 			public void handle(ServerWebSocket arg0) {
 				// TODO Auto-generated method stub
-				System.out.println("Received connection");
+				container.logger().info("Received connection");
 			}
 			  
 		  };
