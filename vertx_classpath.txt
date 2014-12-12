@@ -6,6 +6,7 @@
 # module elsewhere
 
 src/main/resources
+src/main/resources/web
 target/classes
 target/dependencies
 bin
