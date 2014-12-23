@@ -14,8 +14,22 @@
 	var $input;
 	
 	$(document).ready(function() {
+		$user = $('#username');
+		$input = $('#message');
+		$chatRoom = $('#response');
+		$('.chat-wrapper').hide();
+		$user.focus();
+		
+		$('#enterChat').click(function(evt) {
+			evt.preventDefault();
+			serverConnect();
+			$('.chat-wrapper h2').text($user.val() + " in " + room);
+			$('.chat-signin').hide();
+			$('.chat-wrapper').show();
+			$input.focus();
+		});
 
-	}
+	});	
 
 	function serverConnect() {
 
