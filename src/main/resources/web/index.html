@@ -28,7 +28,15 @@
 			$('.chat-wrapper').show();
 			$input.focus();
 		});
-
+		
+		$('#doChat').submit(function(evt) {
+			evt.preventDefault();
+			send()
+		});
+		
+		$('#exitChat').click(function(){
+			closeChat();
+		});
 	});	
 
 	function serverConnect() {
