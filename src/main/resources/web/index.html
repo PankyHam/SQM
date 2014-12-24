@@ -56,11 +56,19 @@
 	}
 
 	function send() {
-
+		var messageInput = '{"message":"' + $input.val() + '", "sender":"'
+				+ $user.val() + '", "received":""}';
+		webSocket.send(messageInput);
+		$input.val('').focus();
 	}
 
 	function onMessageReceived(evt) {
-
+		var messageInput = JSON.parse(evt.data); // native API
+		var $inputLine = $('<tr><td class="received">' + messageInput.received
+				+ '</td><td class="user label label-info">' + messageInput.sender
+				+ '</td><td class="message badge">' + messageInput.message
+				+ '</td></tr>');
+		$chatRoom.append($inputLine);
 	}
 
 </script>
