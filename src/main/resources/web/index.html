@@ -42,11 +42,17 @@
 	});	
 
 	function serverConnect() {
-
+		room = $('#chatroom option:selected').val();
+		webSocket = new WebSocket(serviceLocation + room);
+		webSocket.onmessage = onMessageReceived;
 	}
 
 	function closeChat() {
-
+		webSocket.close();
+		$chatRoom.empty();
+		$('.chat-wrapper').hide();
+		$('.chat-signin').show();
+		$user.focus();
 	}
 
 	function send() {
