@@ -63,10 +63,16 @@
 	}
 
 	function onMessageReceived(evt) {
-		var messageInput = JSON.parse(evt.data); // native API
-		var $inputLine = $('<tr><td class="received">' + messageInput.received
-				+ '</td><td class="user label label-info">' + messageInput.sender
-				+ '</td><td class="message badge">' + messageInput.message
+		var messageOutput = JSON.parse(evt.data); 
+		
+		// Handle error checking and malformed 
+		if (messageOutput.message === "null") {
+			return;
+		}
+		
+		var $inputLine = $('<tr><td class="received">' + messageOutput.received
+				+ '</td><td class="user label label-info">' + messageOutput.sender
+				+ '</td><td class="message badge">' + messageOutput.message
 				+ '</td></tr>');
 		$chatRoom.append($inputLine);
 	}
