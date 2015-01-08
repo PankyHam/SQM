@@ -49,8 +49,7 @@ public class ServerIntegrationTests extends TestVerticle {
 
 	@Test
 	/*
-	 * This test deploys some arbitrary verticle - note that the call to
-	 * testComplete() is inside the Verticle `SomeVerticle`
+	 * This test deploys the server verticle and tests client connections.
 	 */
 	public void testDeployServerVerticle() {
 		// Deploy the server verticle
